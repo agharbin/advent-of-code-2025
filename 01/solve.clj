@@ -1,4 +1,4 @@
-(ns advent.2025
+(ns advent.2025.1
   (:require
     [clojure.repl :as repl]
     [clojure.string :as s]
@@ -7,12 +7,12 @@
 
 ;; Input
 
-(defn parse-line [input]
-  (let [[_ dir n] (re-matches #"(L|R)(\d+)" input)]
+(defn parse-line [i]
+  (let [[_ dir n] (re-matches #"(L|R)(\d+)" i)]
     [(keyword dir) (parse-long n)]))
 
-(defn parse-input [input]
-  (->> input
+(defn parse-input [i]
+  (->> i
        s/split-lines
        (map parse-line)))
 
